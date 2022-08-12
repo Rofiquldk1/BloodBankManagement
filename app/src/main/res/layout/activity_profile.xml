@@ -184,7 +184,7 @@
             android:background="@drawable/signin_btn"
             android:text="@string/signup"
             android:textAllCaps="false"
-            android:textColor="@color/colorPrimary" />
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

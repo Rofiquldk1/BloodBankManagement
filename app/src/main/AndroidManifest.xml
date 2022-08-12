@@ -26,6 +26,7 @@
         <activity android:name=".activities.PostActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.Dashboard" />
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".activities.SplashActivity"
             android:windowSoftInputMode="adjustResize"

@@ -71,7 +71,7 @@ public class ProfileActivity extends AppCompatActivity {
         isDonor = findViewById(R.id.checkbox);
 
         btnSignup = findViewById(R.id.button_register);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (mAuth.getCurrentUser() != null) {
 
@@ -81,7 +81,7 @@ public class ProfileActivity extends AppCompatActivity {
             btnSignup.setText("Update Profile");
             pd.dismiss();
            /// getActionBar().setTitle("Profile");
-            getSupportActionBar().setTitle("Profile");
+            //getSupportActionBar().setTitle("Profile");
             findViewById(R.id.image_logo).setVisibility(View.GONE);
             isUpdate = true;
 

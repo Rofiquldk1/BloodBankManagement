@@ -1,6 +1,5 @@
 package com.example.bloodbankmanagement.adapters;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,16 +20,21 @@ public class BloodRequestAdapter extends RecyclerView.Adapter<BloodRequestAdapte
 
     public class PostHolder extends RecyclerView.ViewHolder
     {
-        TextView Name, bloodgroup, Address, contact, posted;
+        TextView name,division,posted_date,blood_amount,contact,posted_time,hospital,message,blood_group;
 
         public PostHolder(@NonNull View itemView) {
             super(itemView);
 
-            Name = itemView.findViewById(R.id.reqstUser);
+            name = itemView.findViewById(R.id.reqstUser);
+            division = itemView.findViewById(R.id.division);
+            posted_date = itemView.findViewById(R.id.posted_date);
+            blood_amount = itemView.findViewById(R.id.blood_amount);
             contact = itemView.findViewById(R.id.targetCN);
-            bloodgroup = itemView.findViewById(R.id.targetBG);
-            Address = itemView.findViewById(R.id.reqstLocation);
-            posted = itemView.findViewById(R.id.posted);
+            posted_time = itemView.findViewById(R.id.posted_time);
+            hospital = itemView.findViewById(R.id.hospital);
+            message = itemView.findViewById(R.id.msg);
+            blood_group = itemView.findViewById(R.id.targetBG);
+
 
         }
     }
@@ -52,21 +56,27 @@ public class BloodRequestAdapter extends RecyclerView.Adapter<BloodRequestAdapte
     @Override
     public void onBindViewHolder(PostHolder postHolder, int i) {
 
-        if(i%2==0)
+        /*if(i%2==0)
         {
             postHolder.itemView.setBackgroundColor(Color.parseColor("#C13F31"));
         }
         else
         {
             postHolder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
-        }
+        }*/
 
         CustomUserData customUserData = postLists.get(i);
-        postHolder.Name.setText("Posted by: "+customUserData.getName());
-        postHolder.Address.setText("From: "+customUserData.getAddress()+", "+customUserData.getDivision());
-        postHolder.bloodgroup.setText("Needs "+customUserData.getBloodGroup());
-        postHolder.posted.setText("Posted on:"+customUserData.getTime()+", "+customUserData.getDate());
+        postHolder.name.setText(customUserData.getName());
+        postHolder.division.setText(customUserData.getDivision());
+        postHolder.posted_date.setText(customUserData.getDate());
+        //postHolder.blood_amount.setText(customUserData.getName());
         postHolder.contact.setText(customUserData.getContact());
+        postHolder.posted_time.setText("Status Time : "+customUserData.getTime());
+        //postHolder.hospital.setText(customUserData.getName());
+        //postHolder.message.setText(customUserData.getName());
+        postHolder.blood_group.setText(customUserData.getBloodGroup());
+
+        //postHolder.address.setText("From: "+customUserData.getAddress()+", "+customUserData.getDivision());
 
     }
 
