@@ -2,6 +2,7 @@ package com.example.bloodbankmanagement.activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -71,6 +72,7 @@ public class Dashboard extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setColorFilter(Color.WHITE);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

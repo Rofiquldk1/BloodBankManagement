@@ -29,6 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -73,29 +74,39 @@ public class HomeView extends Fragment {
         recentPosts.addItemDecoration(new DividerItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
         recentPosts.setAdapter(restAdapter);
 
-        AddPosts();
+        addPosts();
         return view;
 
     }
-    private void AddPosts()
+    private void addPosts()
     {
-        Query allposts = donor_ref.child("posts");
+
+
+        Query allposts = donor_ref.child("posts").orderByChild("DateTime");
         pd.show();
         allposts.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 if(dataSnapshot.exists()) {
-
                     for (DataSnapshot singlepost : dataSnapshot.getChildren()) {
                         CustomUserData customUserData = singlepost.getValue(CustomUserData.class);
                         postLists.add(customUserData);
                         restAdapter.notifyDataSetChanged();
+                        /*for (DataSnapshot singlepost2 : singlepost.getChildren()) {
+                            CustomUserData customUserData = singlepost2.getValue(CustomUserData.class);
+                            postLists.add(customUserData);
+                            restAdapter.notifyDataSetChanged();
+                        }*/
                     }
+                    Collections.reverse(postLists);
+                    restAdapter.notifyDataSetChanged();
+
                     pd.dismiss();
                 }
                 else
                 {
+                    pd.dismiss();
                     Toast.makeText(getActivity(), "Database is empty now!",
                             Toast.LENGTH_LONG).show();
                 }

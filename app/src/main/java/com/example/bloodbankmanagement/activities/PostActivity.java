@@ -42,6 +42,7 @@ public class PostActivity extends AppCompatActivity {
     Calendar cal;
     String uid;
     String Time, Date;
+    int sec;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,38 +65,8 @@ public class PostActivity extends AppCompatActivity {
 
         btnpost = findViewById(R.id.postbtn);
 
-        cal = Calendar.getInstance();
+        generateDateAndTime();
 
-        int day = cal.get(Calendar.DAY_OF_MONTH);
-        int month = cal.get(Calendar.MONTH);
-        int year = cal.get(Calendar.YEAR);
-        int hour = cal.get(Calendar.HOUR);
-        int min = cal.get(Calendar.MINUTE);
-        month+=1;
-        Time = "";
-        Date = "";
-        String ampm="AM";
-
-        if(cal.get(Calendar.AM_PM) ==1)
-        {
-            ampm = "PM";
-        }
-
-        if(hour<10)
-        {
-            Time += "0";
-        }
-        Time += hour;
-        Time +=":";
-
-        if(min<10) {
-            Time += "0";
-        }
-
-        Time +=min;
-        Time +=(" "+ampm);
-
-        Date = day+"/"+month+"/"+year;
 
         FirebaseUser cur_user = mAuth.getInstance().getCurrentUser();
 
@@ -131,15 +102,18 @@ public class PostActivity extends AppCompatActivity {
                         findname.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
+                                String pid = getAlphaNumericString(Calendar.getInstance().getTimeInMillis()+"");
+                                String timeInMilis = Calendar.getInstance().getTimeInMillis()+"";
                                 if (dataSnapshot.exists()) {
-                                    db_ref.child(uid).child("Name").setValue(dataSnapshot.getValue(UserData.class).getName());
-                                    db_ref.child(uid).child("Contact").setValue(text1.getText().toString());
-                                    db_ref.child(uid).child("Address").setValue(text2.getText().toString());
-                                    db_ref.child(uid).child("Division").setValue(spinner2.getSelectedItem().toString());
-                                    db_ref.child(uid).child("BloodGroup").setValue(spinner1.getSelectedItem().toString());
-                                    db_ref.child(uid).child("Time").setValue(Time);
-                                    db_ref.child(uid).child("Date").setValue(Date);
+                                    db_ref.child(pid).child("Uid").setValue(uid);
+                                    db_ref.child(pid).child("Name").setValue(dataSnapshot.getValue(UserData.class).getName());
+                                    db_ref.child(pid).child("Contact").setValue("+88"+text1.getText().toString());
+                                    db_ref.child(pid).child("Address").setValue(text2.getText().toString());
+                                    db_ref.child(pid).child("Division").setValue(spinner2.getSelectedItem().toString());
+                                    db_ref.child(pid).child("BloodGroup").setValue(spinner1.getSelectedItem().toString());
+                                    db_ref.child(pid).child("Time").setValue(Time);
+                                    db_ref.child(pid).child("Date").setValue(Date);
+                                    db_ref.child(pid).child("DateTime").setValue(timeInMilis+"");
                                     Toast.makeText(PostActivity.this, "Your post has been created successfully",
                                             Toast.LENGTH_LONG).show();
                                     startActivity(new Intent(PostActivity.this, Dashboard.class));
@@ -169,6 +143,42 @@ public class PostActivity extends AppCompatActivity {
 
     }
 
+    private void generateDateAndTime() {
+        cal = Calendar.getInstance();
+
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        int month = cal.get(Calendar.MONTH);
+        int year = cal.get(Calendar.YEAR);
+        int hour = cal.get(Calendar.HOUR);
+        int min = cal.get(Calendar.MINUTE);
+        sec = cal.get(Calendar.SECOND);
+        month+=1;
+        Time = "";
+        Date = "";
+        String ampm="AM";
+
+        if(cal.get(Calendar.AM_PM) ==1)
+        {
+            ampm = "PM";
+        }
+
+        if(hour<10)
+        {
+            Time += "0";
+        }
+        Time += hour;
+        Time +=":";
+
+        if(min<10) {
+            Time += "0";
+        }
+
+        Time +=min;
+        Time +=(" "+ampm);
+
+        Date = day+"/"+month+"/"+year;
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -178,5 +188,32 @@ public class PostActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private String getAlphaNumericString(String dt)
+    {
+
+        // chose a Character random from this String
+        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                + "0123456789"
+                + "abcdefghijklmnopqrstuvxyz";
+
+        // create StringBuffer size of AlphaNumericString
+        StringBuilder sb = new StringBuilder(dt);
+
+        for (int i = 0; i < 10; i++) {
+
+            // generate a random number between
+            // 0 to AlphaNumericString variable length
+            int index
+                    = (int)(AlphaNumericString.length()
+                    * Math.random());
+
+            // add Character one by one in end of sb
+            sb.append(AlphaNumericString
+                    .charAt(index));
+        }
+
+        return sb.toString();
     }
 }
