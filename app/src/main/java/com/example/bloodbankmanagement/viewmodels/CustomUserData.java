@@ -4,23 +4,26 @@ import java.io.Serializable;
 
 
 public class CustomUserData implements Serializable {
-   private String Address, Division, Contact;
-   private String Name, BloodGroup;
-   private String Time, Date;
-
+   private String Address,Amount,BloodGroup,Contact,Date,DateTime,Division,HospitalName,Message,
+           Name,Time,Uid;
 
    public CustomUserData() {
 
     }
 
-    public CustomUserData(String address, String division, String contact, String name, String bloodGroup, String time, String date) {
+    public CustomUserData(String address, String amount, String bloodGroup, String contact, String date, String dateTime, String division, String hospitalName, String message, String name, String time, String uid) {
         Address = address;
-        Division = division;
-        Contact = contact;
-        Name = name;
+        Amount = amount;
         BloodGroup = bloodGroup;
-        Time = time;
+        Contact = contact;
         Date = date;
+        DateTime = dateTime;
+        Division = division;
+        HospitalName = hospitalName;
+        Message = message;
+        Name = name;
+        Time = time;
+        Uid = uid;
     }
 
     public String getAddress() {
@@ -28,31 +31,15 @@ public class CustomUserData implements Serializable {
     }
 
     public void setAddress(String address) {
-        this.Address = address;
+        Address = address;
     }
 
-    public String getDivision() {
-        return Division;
+    public String getAmount() {
+        return Amount;
     }
 
-    public void setDivision(String division) {
-        this.Division = division;
-    }
-
-    public String getContact() {
-        return Contact;
-    }
-
-    public void setContact(String contact) {
-        this.Contact = contact;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-       this.Name = name;
+    public void setAmount(String amount) {
+        Amount = amount;
     }
 
     public String getBloodGroup() {
@@ -60,15 +47,15 @@ public class CustomUserData implements Serializable {
     }
 
     public void setBloodGroup(String bloodGroup) {
-        this.BloodGroup = bloodGroup;
+        BloodGroup = bloodGroup;
     }
 
-    public String getTime() {
-        return Time;
+    public String getContact() {
+        return Contact;
     }
 
-    public void setTime(String time) {
-        this.Time = time;
+    public void setContact(String contact) {
+        Contact = contact;
     }
 
     public String getDate() {
@@ -76,6 +63,62 @@ public class CustomUserData implements Serializable {
     }
 
     public void setDate(String date) {
-        this.Date = date;
+        Date = date;
+    }
+
+    public String getDateTime() {
+        return DateTime;
+    }
+
+    public void setDateTime(String dateTime) {
+        DateTime = dateTime;
+    }
+
+    public String getDivision() {
+        return Division;
+    }
+
+    public void setDivision(String division) {
+        Division = division;
+    }
+
+    public String getHospitalName() {
+        return HospitalName;
+    }
+
+    public void setHospitalName(String hospitalName) {
+        HospitalName = hospitalName;
+    }
+
+    public String getMessage() {
+        return Message;
+    }
+
+    public void setMessage(String message) {
+        Message = message;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public String getTime() {
+        return Time;
+    }
+
+    public void setTime(String time) {
+        Time = time;
+    }
+
+    public String getUid() {
+        return Uid;
+    }
+
+    public void setUid(String uid) {
+        Uid = uid;
     }
 }

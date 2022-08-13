@@ -31,8 +31,8 @@ public class PostActivity extends AppCompatActivity {
 
     ProgressDialog pd;
 
-    EditText text1, text2;
-    Spinner spinner1, spinner2;
+    EditText text_contact, text_hospital, text_reason;
+    Spinner spinner_district, spinner_blood_grp, spinner_amount_of_blood_grp;
     Button btnpost;
 
     FirebaseDatabase fdb;
@@ -57,11 +57,13 @@ public class PostActivity extends AppCompatActivity {
         //getSupportActionBar().setTitle("Post Blood Request");
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        text1 = findViewById(R.id.getMobile);
-        text2 = findViewById(R.id.getLocation);
+        text_contact = findViewById(R.id.contact);
+        text_hospital = findViewById(R.id.namOfHospital);
+        text_reason = findViewById(R.id.reasonOfBlood);
 
-        spinner1 = findViewById(R.id.SpinnerBlood);
-        spinner2 = findViewById(R.id.SpinnerDivision);
+        spinner_district = findViewById(R.id.SpinnerDistrict);
+        spinner_blood_grp = findViewById(R.id.SpinnerBlood);
+        spinner_amount_of_blood_grp = findViewById(R.id.SpinnerBloodAmount);
 
         btnpost = findViewById(R.id.postbtn);
 
@@ -88,14 +90,19 @@ public class PostActivity extends AppCompatActivity {
                     pd.show();
                     final Query findname = fdb.getReference("users").child(uid);
 
-                    if(text1.getText().length() == 0)
+                    if(text_hospital.getText().length() == 0)
+                    {
+                        Toast.makeText(getApplicationContext(), "Enter your hospital name!",
+                                Toast.LENGTH_LONG).show();
+                    }
+                    else if(text_contact.getText().length() == 0)
                     {
                         Toast.makeText(getApplicationContext(), "Enter your contact number!",
                                 Toast.LENGTH_LONG).show();
                     }
-                    else if(text2.getText().length() == 0)
+                    else if(text_reason.getText().length() == 0)
                     {
-                        Toast.makeText(getApplicationContext(), "Enter your location!",
+                        Toast.makeText(getApplicationContext(), "Enter why do you need blood!",
                                 Toast.LENGTH_LONG).show();
                     }
                     else {
@@ -107,10 +114,13 @@ public class PostActivity extends AppCompatActivity {
                                 if (dataSnapshot.exists()) {
                                     db_ref.child(pid).child("Uid").setValue(uid);
                                     db_ref.child(pid).child("Name").setValue(dataSnapshot.getValue(UserData.class).getName());
-                                    db_ref.child(pid).child("Contact").setValue("+88"+text1.getText().toString());
-                                    db_ref.child(pid).child("Address").setValue(text2.getText().toString());
-                                    db_ref.child(pid).child("Division").setValue(spinner2.getSelectedItem().toString());
-                                    db_ref.child(pid).child("BloodGroup").setValue(spinner1.getSelectedItem().toString());
+                                    db_ref.child(pid).child("HospitalName").setValue(text_hospital.getText().toString());
+                                    db_ref.child(pid).child("Address").setValue("");
+                                    db_ref.child(pid).child("Message").setValue(text_reason.getText().toString());
+                                    db_ref.child(pid).child("Contact").setValue("+88"+text_contact.getText().toString());
+                                    db_ref.child(pid).child("Amount").setValue(spinner_amount_of_blood_grp.getSelectedItem().toString());
+                                    db_ref.child(pid).child("Division").setValue(spinner_district.getSelectedItem().toString());
+                                    db_ref.child(pid).child("BloodGroup").setValue(spinner_blood_grp.getSelectedItem().toString());
                                     db_ref.child(pid).child("Time").setValue(Time);
                                     db_ref.child(pid).child("Date").setValue(Date);
                                     db_ref.child(pid).child("DateTime").setValue(timeInMilis+"");

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/red_button_bg"
+    android:layout_gravity="center"
+    android:gravity="center"
     tools:context=".activities.PostActivity">
 
 
@@ -14,84 +15,63 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:padding="5dp"
-                android:text="Contact:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <EditText
-                android:id="@+id/getMobile"
-                android:padding="5dp"
-                android:inputType="phone"
-                android:hint="@string/mobile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:orientation="horizontal"
+        <Spinner
+            android:background="@color/purple_200"
+            android:layout_marginTop="10dp"
+            android:id="@+id/SpinnerDistrict"
+            android:entries="@array/division_list"
+            android:padding="5dp"
+            android:inputType="text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:padding="5dp"
-                android:text="Location:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <EditText
-                android:id="@+id/getLocation"
-                android:padding="5dp"
-                android:inputType="text"
-                android:hint="Enter location of place"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+            android:layout_height="wrap_content" />
 
-        <LinearLayout
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:orientation="horizontal"
+        <Spinner
+            android:id="@+id/SpinnerBlood"
+            android:background="@color/purple_200"
+            android:layout_marginTop="10dp"
+            android:entries="@array/Blood_Group"
+            android:padding="5dp"
+            android:inputType="text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:padding="5dp"
-                android:text="@string/BloodGroup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <Spinner
-                android:id="@+id/SpinnerBlood"
-                android:entries="@array/Blood_Group"
-                android:padding="5dp"
-                android:inputType="text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:orientation="horizontal"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/SpinnerBloodAmount"
+            android:layout_marginTop="10dp"
+            android:background="@color/purple_200"
+            android:entries="@array/amount_of_Blood"
+            android:padding="5dp"
+            android:inputType="text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:padding="5dp"
-                android:text="@string/Division"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <Spinner
-                android:id="@+id/SpinnerDivision"
-                android:entries="@array/division_list"
-                android:padding="5dp"
-                android:inputType="text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/contact"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:inputType="phone"
+            android:hint=" 01XXXXXXXXX"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/namOfHospital"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:inputType="text"
+            android:hint=" Name of Hospital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/reasonOfBlood"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:inputType="text"
+            android:hint=" Why Do You Need Blood ?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <Button
             android:layout_marginTop="40dp"
@@ -99,10 +79,11 @@
             android:gravity="center"
             android:id="@+id/postbtn"
             android:text="@string/Post"
+            android:textStyle="bold"
             android:backgroundTint="@color/primary_dark"
             android:background="@drawable/signin_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="80dp"
+            android:layout_height="40dp" />
 
     </LinearLayout>
 

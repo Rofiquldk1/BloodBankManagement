@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BloodBankManagement</string>
+    <string name="app_name">BloodBank</string>
 
     <string name="title_activity_login">Sign in</string>
     <string name="home">Home</string>
@@ -34,14 +34,71 @@
 
 
     <string-array name="division_list">
-        <item>Dhaka</item>
-        <item>Rajshahi</item>
+        <item>Select District</item>
+        <item>Bagerhat</item>
+        <item>Bandarban</item>
+        <item>Barguna</item>
         <item>Barisal</item>
-        <item>Khulna</item>
-        <item>Sylhet</item>
-        <item>Rangpur</item>
+        <item>Bhola</item>
+        <item>Bogra</item>
+        <item>Brahmanbaria</item>
+        <item>Chandpur</item>
         <item>Chittagong</item>
+        <item>Chuadanga</item>
+        <item>Comilla</item>
+        <item>Cox Bazar</item>
+        <item>Dhaka</item>
+        <item>Dinajpur</item>
+        <item>Faridpur</item>
+        <item>Feni</item>
+        <item>Gaibandha</item>
+        <item>Gazipur</item>
+        <item>Gopalganj</item>
+        <item>Habiganj</item>
+        <item>Jaipurhat</item>
+        <item>Jamalpur</item>
+        <item>Jessore</item>
+        <item>Jhalakati</item>
+        <item>Jhenaidah</item>
+        <item>Khagrachari</item>
+        <item>Khulna</item>
+        <item>Kishoreganj</item>
+        <item>Kurigram</item>
+        <item>Kushtia</item>
+        <item>Lakshmipur</item>
+        <item>Lalmonirhat</item>
+        <item>Madaripur</item>
+        <item>Magura</item>
+        <item>Manikganj</item>
+        <item>Meherpur</item>
+        <item>Moulvibazar</item>
+        <item>Munshiganj</item>
         <item>Mymensingh</item>
+        <item>Naogaon</item>
+        <item>Narail</item>
+        <item>Narayanganj</item>
+        <item>Narsingdi</item>
+        <item>Natore</item>
+        <item>Nawabganj</item>
+        <item>Netrakona</item>
+        <item>Nilphamari</item>
+        <item>Noakhali</item>
+        <item>Pabna</item>
+        <item>Panchagarh</item>
+        <item>Parbattya Chattagram</item>
+        <item>Patuakhali</item>
+        <item>Pirojpur</item>
+        <item>Rajbari</item>
+        <item>Rajshahi</item>
+        <item>Rangpur</item>
+        <item>Satkhira</item>
+        <item>Shariatpur</item>
+        <item>Sherpur</item>
+        <item>Sirajganj</item>
+        <item>Sunamganj</item>
+        <item>Sylhet</item>
+        <item>Tangail</item>
+        <item>Thakurgaon</item>
 
     </string-array>
 
@@ -50,7 +107,20 @@
         <item>Female</item>
     </array>
 
+    <array name="amount_of_Blood">
+        <item>Amount of Required Blood</item>
+        <item>1 bag</item>
+        <item>2 bag</item>
+        <item>3 bag</item>
+        <item>4 bag</item>
+        <item>5 bag</item>
+        <item>6 bag</item>
+        <item>7 bag</item>
+        <item>8 bag</item>
+    </array>
+
     <array name="Blood_Group">
+        <item>Required Blood Group</item>
         <item>A+</item>
         <item>A-</item>
         <item>B+</item>
@@ -66,12 +136,8 @@
     <string name="male_">If you are male, you must:\nBe healthy and feeling well\nBe at least 17 years old in most states\nBe at least 5 ft 1 inch \nWeigh at least 130 lbs.\n</string>
     <string name="info_">Giving blood saves lives. The blood you give is a lifeline in an emergency and for people who need long-term treatments. Many people would not be alive today if donors had not generously given their blood. \n\nWhy we need you to give blood?\n\n We need over 6000 blood donations every day to treat patients in need for people to give blood.\n\nEach year we need approximately 200000 new donors, as some donors can no longer give blood.Most people between ages of 17-65 are able to give blood. Around half our current donors are over 45.That is why we need more young people to start giving blood.</string>
     <string name="aboutus">This is a demo projects on blood donation and collecting. Our Team Members are: \n
-                1. Mobarak Hosen Shakil\n
-                2. Shamim Hossain \n
-                3. Mehedi Hasan \n
-                4. Akib Hosen Khan \n
-                5. MMR Raju \n
-                6. Abdur Rahman\n
+                1. Rofiqul Islam\n
+                2. Rofiqul Islam\n
     </string>
 
 

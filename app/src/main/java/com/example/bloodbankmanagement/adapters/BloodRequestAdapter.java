@@ -69,14 +69,13 @@ public class BloodRequestAdapter extends RecyclerView.Adapter<BloodRequestAdapte
         postHolder.name.setText(customUserData.getName());
         postHolder.division.setText(customUserData.getDivision());
         postHolder.posted_date.setText(customUserData.getDate());
-        //postHolder.blood_amount.setText(customUserData.getName());
+        postHolder.blood_amount.setText(customUserData.getAmount());
         postHolder.contact.setText(customUserData.getContact());
         postHolder.posted_time.setText("Status Time : "+customUserData.getTime());
-        //postHolder.hospital.setText(customUserData.getName());
-        //postHolder.message.setText(customUserData.getName());
+        postHolder.hospital.setText(customUserData.getHospitalName());
+        postHolder.message.setText(customUserData.getMessage());
         postHolder.blood_group.setText(customUserData.getBloodGroup());
 
-        //postHolder.address.setText("From: "+customUserData.getAddress()+", "+customUserData.getDivision());
 
     }
 
