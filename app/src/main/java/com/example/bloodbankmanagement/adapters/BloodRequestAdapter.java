@@ -1,8 +1,12 @@
 package com.example.bloodbankmanagement.adapters;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,10 +21,12 @@ public class BloodRequestAdapter extends RecyclerView.Adapter<BloodRequestAdapte
 
 
     private List<CustomUserData> postLists;
+    Context mContext;
 
     public class PostHolder extends RecyclerView.ViewHolder
     {
         TextView name,division,posted_date,blood_amount,contact,posted_time,hospital,message,blood_group;
+        ImageButton img_btn_call;
 
         public PostHolder(@NonNull View itemView) {
             super(itemView);
@@ -34,13 +40,15 @@ public class BloodRequestAdapter extends RecyclerView.Adapter<BloodRequestAdapte
             hospital = itemView.findViewById(R.id.hospital);
             message = itemView.findViewById(R.id.msg);
             blood_group = itemView.findViewById(R.id.targetBG);
+            img_btn_call = itemView.findViewById(R.id.image_btn_call);
 
 
         }
     }
 
-    public BloodRequestAdapter(List<CustomUserData> postLists)
+    public BloodRequestAdapter(List<CustomUserData> postLists,Context mContext)
     {
+        this.mContext = mContext;
         this.postLists = postLists;
     }
 
@@ -77,6 +85,15 @@ public class BloodRequestAdapter extends RecyclerView.Adapter<BloodRequestAdapte
         postHolder.blood_group.setText(customUserData.getBloodGroup());
 
 
+        postHolder.img_btn_call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String phone = customUserData.getContact();
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse("tel:" + phone));
+                mContext.startActivity(callIntent);
+            }
+        });
     }
 
     @Override

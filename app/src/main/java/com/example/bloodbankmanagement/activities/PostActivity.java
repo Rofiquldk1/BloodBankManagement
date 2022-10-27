@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.bloodbankmanagement.R;
 import com.example.bloodbankmanagement.viewmodels.UserData;
@@ -54,8 +55,15 @@ public class PostActivity extends AppCompatActivity {
         pd.setCancelable(true);
         pd.setCanceledOnTouchOutside(false);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Make a Request for Blood");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+
         //getSupportActionBar().setTitle("Post Blood Request");
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayShowTitleEnabled(true);
 
         text_contact = findViewById(R.id.contact);
         text_hospital = findViewById(R.id.namOfHospital);

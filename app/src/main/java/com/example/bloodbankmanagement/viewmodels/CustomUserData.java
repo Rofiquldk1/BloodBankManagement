@@ -11,7 +11,9 @@ public class CustomUserData implements Serializable {
 
     }
 
-    public CustomUserData(String address, String amount, String bloodGroup, String contact, String date, String dateTime, String division, String hospitalName, String message, String name, String time, String uid) {
+    public CustomUserData(String address, String amount, String bloodGroup, String contact, String date,
+                          String dateTime, String division, String hospitalName, String message, String name,
+                          String time, String uid) {
         Address = address;
         Amount = amount;
         BloodGroup = bloodGroup;

@@ -67,7 +67,7 @@ public class HomeView extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         getActivity().setTitle("Blood Bank");
 
-        restAdapter = new BloodRequestAdapter(postLists);
+        restAdapter = new BloodRequestAdapter(postLists,getContext());
         RecyclerView.LayoutManager pmLayout = new LinearLayoutManager(getContext());
         recentPosts.setLayoutManager(pmLayout);
         recentPosts.setItemAnimator(new DefaultItemAnimator());

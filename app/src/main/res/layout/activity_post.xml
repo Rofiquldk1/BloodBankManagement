@@ -4,86 +4,177 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:gravity="center"
     tools:context=".activities.PostActivity">
 
 
+
     <LinearLayout
-        android:padding="20dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-        <Spinner
-            android:background="@color/purple_200"
-            android:layout_marginTop="10dp"
-            android:id="@+id/SpinnerDistrict"
-            android:entries="@array/division_list"
-            android:padding="5dp"
-            android:inputType="text"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Spinner
-            android:id="@+id/SpinnerBlood"
-            android:background="@color/purple_200"
-            android:layout_marginTop="10dp"
-            android:entries="@array/Blood_Group"
-            android:padding="5dp"
-            android:inputType="text"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+            <!-- Toolbar is the actual app bar with text and the action items -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:minHeight="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways" />
+        </com.google.android.material.appbar.AppBarLayout>
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="4dp">
 
-        <Spinner
-            android:id="@+id/SpinnerBloodAmount"
-            android:layout_marginTop="10dp"
-            android:background="@color/purple_200"
-            android:entries="@array/amount_of_Blood"
-            android:padding="5dp"
-            android:inputType="text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <ImageButton
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/ic_baseline_bloodtype_24"
+                        android:backgroundTint="#ffffff" />
+                    <Spinner
+                        android:id="@+id/SpinnerBloodGrp"
+                        android:entries="@array/Blood_Group"
+                        android:inputType="text"
+                        android:layout_width="match_parent"
+                        android:layout_height="40sp"
+                        android:backgroundTint="@color/black" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <ImageButton
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/ic_baseline_bloodtype_24"
+                        android:backgroundTint="#ffffff" />
+                    <Spinner
+                        android:id="@+id/SpinnerBloodAmount"
+                        android:entries="@array/amount_of_Blood"
+                        android:inputType="text"
+                        android:layout_width="match_parent"
+                        android:layout_height="40sp"
+                        android:backgroundTint="@color/black" />
+                </LinearLayout>
 
-        <EditText
-            android:id="@+id/contact"
-            android:layout_marginTop="10dp"
-            android:padding="5dp"
-            android:inputType="phone"
-            android:hint=" 01XXXXXXXXX"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <ImageButton
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/ic_baseline_add_circle_24"
+                        android:backgroundTint="#ffffff" />
+                    <EditText
+                        android:id="@+id/namOfHospital"
+                        android:padding="5dp"
+                        android:inputType="text"
+                        android:hint="Enter Hospital Name/Location"
+                        android:layout_width="match_parent"
+                        android:layout_height="40sp"
+                        android:fontFamily="@font/ubuntu_regular"
+                        android:includeFontPadding="false" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <ImageButton
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/ic_baseline_location_on_24"
+                        android:backgroundTint="#ffffff" />
+                    <Spinner
+                        android:id="@+id/SpinnerDistrict"
+                        android:entries="@array/division_list"
+                        android:inputType="text"
+                        android:layout_width="match_parent"
+                        android:layout_height="40sp"
+                        android:backgroundTint="@color/black" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <ImageButton
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/ic_baseline_call_24"
+                        android:backgroundTint="#ffffff" />
+                    <EditText
+                        android:id="@+id/contact"
+                        android:padding="5dp"
+                        android:inputType="number"
+                        android:hint="Phone Number"
+                        android:layout_width="match_parent"
+                        android:layout_height="40sp"
+                        android:fontFamily="@font/ubuntu_regular"
+                        android:includeFontPadding="false" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <ImageButton
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/ic_baseline_note_add_24"
+                        android:backgroundTint="#ffffff" />
+                    <EditText
+                        android:id="@+id/reasonOfBlood"
+                        android:padding="5dp"
+                        android:inputType="text"
+                        android:hint="Why Do You Need Blood ?"
+                        android:layout_width="match_parent"
+                        android:layout_height="40sp"
+                        android:fontFamily="@font/ubuntu_regular"
+                        android:includeFontPadding="false" />
+                </LinearLayout>
 
-        <EditText
-            android:id="@+id/namOfHospital"
-            android:layout_marginTop="10dp"
-            android:padding="5dp"
-            android:inputType="text"
-            android:hint=" Name of Hospital"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            </LinearLayout>
 
-        <EditText
-            android:id="@+id/reasonOfBlood"
-            android:layout_marginTop="10dp"
-            android:padding="5dp"
-            android:inputType="text"
-            android:hint=" Why Do You Need Blood ?"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        </androidx.cardview.widget.CardView>
 
         <Button
-            android:layout_marginTop="40dp"
-            android:layout_gravity="center"
-            android:gravity="center"
             android:id="@+id/postbtn"
-            android:text="@string/Post"
-            android:textStyle="bold"
-            android:backgroundTint="@color/primary_dark"
-            android:background="@drawable/signin_btn"
-            android:layout_width="80dp"
-            android:layout_height="40dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="Post" />
+
 
     </LinearLayout>
 

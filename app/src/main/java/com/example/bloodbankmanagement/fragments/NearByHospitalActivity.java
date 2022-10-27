@@ -1,8 +1,13 @@
 package com.example.bloodbankmanagement.fragments;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +21,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import com.example.bloodbankmanagement.R;
 import com.example.bloodbankmanagement.viewmodels.GetNearbyPlacesData;
@@ -213,16 +219,16 @@ public class NearByHospitalActivity extends Fragment implements
         }
     }
 
-   public void ShowHospitals(double latitude, double longitude)
-   {
-       mMap.clear();
-       Object dataTransfer[] = new Object[2];
-       GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
-       String url = getUrl(latitude, longitude, "hospital");
-       dataTransfer[0] = mMap;
-       dataTransfer[1] = url;
+    public void ShowHospitals(double latitude, double longitude)
+    {
+        mMap.clear();
+        Object dataTransfer[] = new Object[2];
+        GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
+        String url = getUrl(latitude, longitude, "hospital");
+        dataTransfer[0] = mMap;
+        dataTransfer[1] = url;
 
-       getNearbyPlacesData.execute(dataTransfer);
-       Toast.makeText(getContext(), "Showing Nearby Hospitals", Toast.LENGTH_SHORT).show();
-   }
+        getNearbyPlacesData.execute(dataTransfer);
+        Toast.makeText(getContext(), "Showing Nearby Hospitals", Toast.LENGTH_SHORT).show();
+    }
 }

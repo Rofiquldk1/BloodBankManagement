@@ -187,7 +187,7 @@ public class Dashboard extends AppCompatActivity
 
         } else if (id == R.id.nearby_hospital) {
            // getSupportFragmentManager().beginTransaction().replace(R.id.fragmentcontainer, new NearByHospitalActivity()).commit();
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), NearByHospitalActivity.class);
             startActivity(intent);
         }
 
