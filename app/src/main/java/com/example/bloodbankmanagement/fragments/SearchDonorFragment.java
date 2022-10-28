@@ -67,8 +67,6 @@ public class SearchDonorFragment extends Fragment {
         pd.setCanceledOnTouchOutside(false);
 
 
-
-
         mAuth = FirebaseAuth.getInstance();
         fuser = mAuth.getCurrentUser();
         fdb = FirebaseDatabase.getInstance();
@@ -87,7 +85,7 @@ public class SearchDonorFragment extends Fragment {
                 donorItem = new ArrayList<>();
                 donorItem.clear();
                 sdadapter = new SearchDonorAdapter(donorItem);
-                recyclerView = (RecyclerView) view.findViewById(R.id.showDonorList);
+                //recyclerView = (RecyclerView) view.findViewById(R.id.showDonorList);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                 RecyclerView.LayoutManager searchdonor = new LinearLayoutManager(getContext());
                 recyclerView.setLayoutManager(searchdonor);

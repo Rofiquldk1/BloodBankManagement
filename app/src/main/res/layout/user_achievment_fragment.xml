@@ -11,6 +11,7 @@
         android:gravity="center"
         android:id="@+id/ShowInof"
         android:visibility="gone"
+        android:fontFamily="@font/ubuntu_regular"
         android:text="You are not a donor.Be a donor first to achieve!"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -31,6 +32,7 @@
             android:background="@drawable/signin_btn"
             android:textColor="@android:color/white"
             android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/ubuntu_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -63,6 +65,7 @@
             android:background="@drawable/circle"
             android:layout_marginTop="5dp"
             android:text="34 days"
+            android:fontFamily="@font/ubuntu_regular"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
@@ -91,6 +94,7 @@
                     android:background="@drawable/signin_btn"
                     android:textColor="@android:color/white"
                     android:text="Total donated:"
+                    android:fontFamily="@font/ubuntu_regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
@@ -99,6 +103,7 @@
                     android:backgroundTint="@color/purple_500"
                     android:background="@drawable/circle"
                     android:text="1 times"
+                    android:fontFamily="@font/ubuntu_regular"
                     android:textColor="@android:color/white"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
@@ -119,6 +124,7 @@
                     android:background="@drawable/signin_btn"
                     android:textColor="@android:color/white"
                     android:text="Last donated:"
+                    android:fontFamily="@font/ubuntu_regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
@@ -127,6 +133,7 @@
                     android:backgroundTint="@color/purple_500"
                     android:background="@drawable/circle"
                     android:text="12/12/2018"
+                    android:fontFamily="@font/ubuntu_regular"
                     android:textColor="@android:color/white"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"

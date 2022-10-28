@@ -17,6 +17,7 @@
             android:id="@+id/reqstUser"
             android:textSize="16sp"
             android:text="Rofiqul"
+            android:fontFamily="@font/ubuntu_regular"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
             android:layout_width="match_parent"
@@ -27,6 +28,7 @@
             android:text="Request For"
             android:background="@color/colorPrimary"
             android:textColor="@color/white"
+            android:fontFamily="@font/ubuntu_regular"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:gravity="center"/>
@@ -54,6 +56,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="A+"
+                            android:fontFamily="@font/ubuntu_regular"
                             android:textSize="22sp"
                             android:textStyle="bold"
                             android:textColor="@color/colorPrimary"/>
@@ -81,6 +84,7 @@
                         <TextView
                             android:id="@+id/division"
                             android:text="Dhaka"
+                            android:fontFamily="@font/ubuntu_regular"
                             android:textSize="14sp"
                             android:textColor="@color/black"
                             android:layout_width="wrap_content"
@@ -103,6 +107,7 @@
                             android:text="11/08/2022"
                             android:textSize="14sp"
                             android:textColor="@color/black"
+                            android:fontFamily="@font/ubuntu_regular"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
@@ -124,6 +129,7 @@
                             android:text="1 bag"
                             android:textSize="14sp"
                             android:textColor="@color/black"
+                            android:fontFamily="@font/ubuntu_regular"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                     </LinearLayout>
@@ -145,6 +151,7 @@
                             android:text="+8801866332212"
                             android:textSize="14sp"
                             android:textColor="@color/black"
+                            android:fontFamily="@font/ubuntu_regular"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                     </LinearLayout>
@@ -187,6 +194,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Status Time : 5:51 PM"
+                android:fontFamily="@font/ubuntu_regular"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
             <TextView
@@ -194,6 +202,7 @@
                 android:textSize="14sp"
                 android:text="Midford Hospital"
                 android:textColor="@color/black"
+                android:fontFamily="@font/ubuntu_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
@@ -201,6 +210,7 @@
                 android:textSize="14sp"
                 android:text="For Pregnant Patient"
                 android:textColor="@color/black"
+                android:fontFamily="@font/ubuntu_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
