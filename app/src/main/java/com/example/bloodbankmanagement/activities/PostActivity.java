@@ -70,7 +70,7 @@ public class PostActivity extends AppCompatActivity {
         text_reason = findViewById(R.id.reasonOfBlood);
 
         spinner_district = findViewById(R.id.SpinnerDistrict);
-        spinner_blood_grp = findViewById(R.id.SpinnerBlood);
+        spinner_blood_grp = findViewById(R.id.SpinnerBloodGrp);
         spinner_amount_of_blood_grp = findViewById(R.id.SpinnerBloodAmount);
 
         btnpost = findViewById(R.id.postbtn);

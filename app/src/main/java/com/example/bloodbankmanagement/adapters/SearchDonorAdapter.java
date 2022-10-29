@@ -1,6 +1,5 @@
 package com.example.bloodbankmanagement.adapters;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,16 +22,14 @@ public class SearchDonorAdapter extends RecyclerView.Adapter<SearchDonorAdapter.
 
     public class PostHolder extends RecyclerView.ViewHolder
     {
-        TextView Name, Address, contact, posted, totaldonate;
+        TextView name, address, contact, lastdonated;
 
         public PostHolder(@NonNull View itemView) {
             super(itemView);
 
-            Name = itemView.findViewById(R.id.donorName);
-            contact = itemView.findViewById(R.id.donorContact);
-            totaldonate = itemView.findViewById(R.id.totaldonate);
-            Address = itemView.findViewById(R.id.donorAddress);
-            posted = itemView.findViewById(R.id.lastdonate);
+            name = itemView.findViewById(R.id.donorName);
+            address = itemView.findViewById(R.id.donorAddress);
+            lastdonated = itemView.findViewById(R.id.lastdonate);
 
         }
     }
@@ -54,20 +51,19 @@ public class SearchDonorAdapter extends RecyclerView.Adapter<SearchDonorAdapter.
     @Override
     public void onBindViewHolder(PostHolder postHolder, int i) {
 
-        if(i%2==0)
+       /* if(i%2==0)
         {
             postHolder.itemView.setBackgroundColor(Color.parseColor("#C13F31"));
         }
         else
         {
             postHolder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
-        }
+        }*/
         DonorData donorData = postLists.get(i);
-        postHolder.Name.setText("Name: "+donorData.getName());
-        postHolder.contact.setText(donorData.getContact());
-        postHolder.Address.setText("Address: "+donorData.getAddress());
-        postHolder.totaldonate.setText("Total Donation: "+donorData.getTotalDonate()+" times");
-        postHolder.posted.setText("Last Donation: "+donorData.getLastDonate());
+        postHolder.name.setText(donorData.getName());
+        postHolder.address.setText(donorData.getAddress());
+        //postHolder.totaldonate.setText("Total Donation: "+donorData.getTotalDonate()+" times");
+        postHolder.lastdonated.setText("4 month ago");
 
 
     }

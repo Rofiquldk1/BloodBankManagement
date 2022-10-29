@@ -6,7 +6,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -85,7 +87,7 @@ public class SearchDonorFragment extends Fragment {
                 donorItem = new ArrayList<>();
                 donorItem.clear();
                 sdadapter = new SearchDonorAdapter(donorItem);
-                //recyclerView = (RecyclerView) view.findViewById(R.id.showDonorList);
+                recyclerView = (RecyclerView) view.findViewById(R.id.showDonorList);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                 RecyclerView.LayoutManager searchdonor = new LinearLayoutManager(getContext());
                 recyclerView.setLayoutManager(searchdonor);
@@ -126,5 +128,7 @@ public class SearchDonorFragment extends Fragment {
         });
         return view;
     }
+
+
 
 }
